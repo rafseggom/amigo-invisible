@@ -231,7 +231,7 @@ function App() {
 
       <footer className="footer">
         <p>
-          Hecho por{' '}
+          Hecho con 💜 por{' '}
           <a
             href="https://github.com/rafseggom"
             target="_blank"
