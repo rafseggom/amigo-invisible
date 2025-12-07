@@ -1,14 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
+  --bg: #f5f7fb;
+  --bg-illustration: radial-gradient(circle at 20% 20%, #e5ecff 0, transparent 35%),
+    radial-gradient(circle at 80% 0%, #ffe9e0 0, transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #eef2ff 100%);
+  --text: #0f172a;
+  --muted: #475569;
+  --panel: #ffffffcc;
+  --border: #e2e8f0;
+  --input-bg: #f8fafc;
+  --pill-bg: #0f172a;
+  --pill-text: #e2e8f0;
+  --primary-from: #0f172a;
+  --primary-to: #1e293b;
+  --accent: #6366f1;
+  --card-bg: #0b1224;
+  --card-text: #e2e8f0;
+  --card-muted: #cbd5e1;
+  --shadow: rgba(15, 23, 42, 0.12);
+  --shadow-strong: rgba(15, 23, 42, 0.3);
+  --surface-blur: 8px;
   font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #0f172a;
-  background-color: #f5f7fb;
+  color: var(--text);
+  background-color: var(--bg);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme='dark'] {
+  --bg: #040712;
+  --bg-illustration: radial-gradient(circle at 20% 15%, #0d1632 0, transparent 40%),
+    radial-gradient(circle at 80% 0%, #1d0f24 0, transparent 36%),
+    linear-gradient(180deg, #060b1a 0%, #040712 100%);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --panel: #111a33ee;
+  --border: #24304d;
+  --input-bg: #0c1324;
+  --pill-bg: #19263f;
+  --pill-text: #f8fafc;
+  --primary-from: #7c8bff;
+  --primary-to: #4f46e5;
+  --accent: #a5b4ff;
+  --card-bg: #0d1427;
+  --card-text: #f1f5f9;
+  --card-muted: #cbd5e1;
+  --shadow: rgba(0, 0, 0, 0.45);
+  --shadow-strong: rgba(0, 0, 0, 0.6);
+  --surface-blur: 0px;
 }
 
 * {
@@ -18,10 +61,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at 20% 20%, #e5ecff 0, transparent 35%),
-    radial-gradient(circle at 80% 0%, #ffe9e0 0, transparent 30%),
-    linear-gradient(180deg, #f8fbff 0%, #eef2ff 100%);
-  color: #0f172a;
+  background: var(--bg-illustration);
+  color: var(--text);
 }
 
 a {

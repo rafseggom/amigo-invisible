@@ -9,10 +9,17 @@
   margin-bottom: 32px;
 }
 
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
 .eyebrow {
   display: inline-block;
-  background: #0f172a;
-  color: #f1f5f9;
+  background: var(--primary-from);
+  color: var(--pill-text);
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
@@ -29,17 +36,17 @@ h1 {
 
 .lead {
   margin: 0;
-  color: #475569;
+  color: var(--muted);
   max-width: 700px;
 }
 
 .panel {
-  background: #ffffffcc;
-  backdrop-filter: blur(8px);
-  border: 1px solid #e2e8f0;
+  background: var(--panel);
+  backdrop-filter: blur(var(--surface-blur));
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 12px 35px var(--shadow);
 }
 
 .input-row {
@@ -52,23 +59,24 @@ input {
   width: 100%;
   padding: 12px 14px;
   border-radius: 10px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--border);
   font-size: 16px;
-  background: #f8fafc;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 input:focus {
-  outline: 2px solid #6366f1;
-  border-color: #6366f1;
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
   background: #fff;
 }
 
 button {
   padding: 12px 16px;
   border-radius: 10px;
-  border: 1px solid #0f172a;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #f8fafc;
+  border: 1px solid var(--primary-from);
+  background: linear-gradient(135deg, var(--primary-from), var(--primary-to));
+  color: var(--card-text);
   font-weight: 600;
   cursor: pointer;
   transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
@@ -83,18 +91,22 @@ button:disabled {
 
 button:not(:disabled):hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 10px 20px var(--shadow);
 }
 
 button.ghost {
   background: transparent;
-  color: #0f172a;
-  border: 1px solid #cbd5e1;
+  color: var(--text);
+  border: 1px solid var(--border);
   box-shadow: none;
 }
 
 button.ghost:hover {
-  border-color: #0f172a;
+  border-color: var(--text);
+}
+
+button.toggle {
+  min-width: 130px;
 }
 
 .pill-list {
@@ -110,8 +122,8 @@ button.ghost:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: var(--pill-bg);
+  color: var(--pill-text);
   padding: 8px 12px;
   border-radius: 999px;
 }
@@ -130,7 +142,7 @@ button.ghost:hover {
 }
 
 .hint {
-  color: #475569;
+  color: var(--muted);
   margin: 14px 0 0 0;
 }
 
@@ -145,11 +157,12 @@ button.ghost:hover {
 }
 
 .card {
-  background: #0b1224;
-  color: #e2e8f0;
+  background: var(--card-bg);
+  color: var(--card-text);
   border-radius: 18px;
   padding: 24px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.3);
+  box-shadow: 0 18px 45px var(--shadow-strong);
+  border: 1px solid var(--border);
 }
 
 .card-head {
@@ -173,7 +186,7 @@ button.ghost:hover {
 
 .progress {
   font-weight: 600;
-  color: #cbd5e1;
+  color: var(--card-muted);
 }
 
 .card h2 {
@@ -182,7 +195,7 @@ button.ghost:hover {
 }
 
 .muted {
-  color: #cbd5e1;
+  color: var(--card-muted);
   margin: 0;
 }
 
@@ -209,6 +222,11 @@ button.ghost:hover {
 @media (max-width: 640px) {
   .input-row {
     grid-template-columns: 1fr;
+  }
+
+  .hero-top {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .card {

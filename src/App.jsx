@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 
 const MIN_PLAYERS = 3
@@ -57,9 +57,14 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [revealed, setRevealed] = useState(false)
   const [error, setError] = useState('')
+  const [theme, setTheme] = useState('dark')
 
   const canDraw = names.length >= MIN_PLAYERS
   const currentPair = useMemo(() => pairs[currentIndex], [pairs, currentIndex])
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme)
+  }, [theme])
 
   const handleAdd = () => {
     const trimmed = input.trim()
@@ -119,11 +124,23 @@ function App() {
   return (
     <main className="page">
       <header className="hero">
-        <p className="eyebrow">Organiza tu amigo invisible</p>
-        <h1>Reparto secreto sin cruces dobles</h1>
-        <p className="lead">
-          Agrega los participantes, genera el reparto y deja que cada persona vea solo a quien le regala.
-        </p>
+        <div className="hero-top">
+          <div>
+            <p className="eyebrow">Amigo invisible exprés</p>
+            <h1>Tu reparto secreto sin spoilers</h1>
+            <p className="lead">
+              Añade los nombres, crea el sorteo y revela turnos uno a uno. Nadie se empareja consigo mismo ni hay cruces directos.
+            </p>
+          </div>
+          <button
+            type="button"
+            className="ghost toggle"
+            onClick={() => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))}
+            aria-label="Cambiar tema"
+          >
+            {theme === 'light' ? 'Modo oscuro' : 'Modo claro'}
+          </button>
+        </div>
       </header>
 
       <section className="panel">
