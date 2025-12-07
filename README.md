@@ -18,6 +18,14 @@ npm run dev
 ```
 Abre la URL que muestre Vite (por defecto http://localhost:5173).
 
+### Despliegue en GitHub Pages
+1) Ajusta el repo a Pages (GitHub ➜ Settings ➜ Pages ➜ Deploy from a branch ➜ gh-pages). 
+2) Ejecuta:
+```bash
+npm run deploy
+```
+Esto construye y publica `dist/` en la rama `gh-pages` usando la base `/amigo-invisible/` ya configurada en `vite.config.js`.
+
 ## Como funciona el sorteo
 - Introduce al menos 3 nombres.
 - Pulsa "Generar reparto" para crear las parejas.
