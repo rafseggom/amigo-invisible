@@ -1,16 +1,29 @@
-# React + Vite
+# Amigo Invisible Express
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single-page app para organizar tu amigo invisible sin spoilers. Permite añadir nombres, generar el sorteo evitando autoasignaciones y cruces dobles, y revelar el destinatario de cada persona uno a uno.
 
-Currently, two official plugins are available:
+## Caracteristicas
+- Sorteo justo: nadie se asigna a si mismo ni hay pares recíprocos.
+- Flujo de revelado paso a paso: cada participante ve solo a quien regala.
+- Modo oscuro (por defecto) y modo claro con toggle.
+- UI responsive con pills para participantes y tarjeta de resultado.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requisitos
+- Node 18+ (se recomienda 18 LTS o superior).
 
-## React Compiler
+## Instalacion y uso
+```bash
+npm install
+npm run dev
+```
+Abre la URL que muestre Vite (por defecto http://localhost:5173).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Como funciona el sorteo
+- Introduce al menos 3 nombres.
+- Pulsa "Generar reparto" para crear las parejas.
+- Para cada turno, pulsa "Mostrar" para ver a quien regalas y luego "Siguiente".
+- "Reiniciar reparto" reinicia solo la revelacion; "Limpiar lista" borra todos los nombres.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Personalizacion rapida
+- Colores y temas: ajusta variables en `src/index.css`.
+- Textos y copys: edita `src/App.jsx`.
